@@ -17,7 +17,7 @@ echo "$mydate: File size exceeds 1M, backing up and truncating" | tee -a ${fdir}
 sleep 5
 # what do we insert here?
 # Instead of running thorough loops, just insert date
-mv ${fdir}/${file} ${fdir}/${file}."$mydate"
+cp ${fdir}/${file} ${fdir}/${file}."$mydate"
 truncate -s 0 ${fdir}${file}
 else
 echo "$mydate: File size still under limit" | tee -a ${fdir}/logfile.txt 
